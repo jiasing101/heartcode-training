@@ -2,11 +2,17 @@ import Image from "next/image";
 import DontDoDrugs from "@/app/assets/dont do drugs.png";
 import { FlipWords } from "@/components/ui/flip-words";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 export default function Home() {
   const words: string[] = ["skibidi", "litty", "sigma"];
 
   return (
-    
     <div>
       <div className="flex flex-col justify-center h-dvh z-10">
         <h1 className="font-bold text-5xl text-center">Drugs are not <FlipWords words={words}/></h1>
@@ -26,6 +32,31 @@ export default function Home() {
         </div>
       </div>
     <BackgroundBeams/>
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>What is the drug and substance abuse problem like in Singapore?</AccordionTrigger>
+          <AccordionContent>
+            Although Singapore has generally been able to handle drug and substance abuse 
+            problems, the issue unfortunately still persists, especially in lower income 
+            families where lack of information and awareness about substance abuse is prevelant.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+        <AccordionTrigger>Has drug and substance abuse increased in Singapore?</AccordionTrigger>
+          <AccordionContent>
+            From 2022 to 2023, the number of new abusers rose by 19%. With this pattern of increase, 
+            it is extremely important that drug/substance abuse awareness is equally spread across 
+            Singapore, regardless of low, middle, high income status.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+        <AccordionTrigger>What age group are most drug abusers?</AccordionTrigger>
+          <AccordionContent>
+            In just 2023, more than half of drug abusers arrested in Singapore were below the age of 
+            30 according to the Central Narcotics Bureau
+          </AccordionContent>
+        </AccordionItem>
+    </Accordion>
     </div>
   );
 }
